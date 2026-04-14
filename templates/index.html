@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+    <style>
+        body {
+             
+             background-color: beige;
+            text-align: center;
+        }
+        h1{
+            color: rgb(19, 19, 160);
+            font-size: 450%;
+            margin: 0%;
+            text-align: center;
+        }
+        h2{
+            font-size: 250%;
+            margin: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        input{
+            width: 180px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 100%;
+
+        }
+        button {
+           width: 180px;
+           height: 50px;
+           font-size: 120%;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           background-color: black;
+           color: rgb(245, 242, 242);
+        
+
+        }
+        button:hover{
+            background-color: rgb(13, 13, 110);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Urna Eletrônica</h1>
+    <h2>Sistema de Votação</h2>
+    <p> Para Votar em seu candidato digite apenas o numero escolhido: </p>
+    <h4>Maria  (1) | João (2) | Ana Julia (3):</h4>
+
+    {% if erro %}
+        <p style="color: red;"><strong>{{erro}}</strong></p>
+    {% endif %}
+
+    <form action="/votar" method="post"> 
+        <input type="number"name="voto_usuario"placeholder="Número do Candidato:">
+        <br>
+        <p>Para encerrar a votação Digite (0)</p>
+        <button type="submit">CONFIRMAR VOTO</button>
+    </form>
+</body>
+</html>
